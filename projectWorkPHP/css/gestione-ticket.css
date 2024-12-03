@@ -1,0 +1,473 @@
+/* Layout principale */
+.main-content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tickets-container {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.tickets-grid {
+    display: grid;
+    gap: 1.2rem;
+}
+
+/* Card ticket */
+.ticket-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.ticket-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.ticket-info {
+    flex: 1;
+}
+
+.ticket-id {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1976d2;
+}
+
+.cliente-info {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+/* Stati del ticket */
+.status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.status.aperto {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.status.in-lavorazione {
+    background-color: #fff3e0;
+    color: #f57c00;
+}
+
+.status.chiuso {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+/* Contenuto del ticket */
+.ticket-content {
+    margin: 1rem 0;
+}
+
+.ticket-description {
+    color: #333;
+    line-height: 1.5;
+}
+
+.ticket-date {
+    color: #666;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+/* Bottoni azione */
+.ticket-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.action-btn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.edit-btn {
+    background-color: #1976d2;
+}
+
+.resolve-btn {
+    background-color: #4caf50;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.edit-btn:hover {
+    background-color: #1565c0;
+}
+
+.resolve-btn:hover {
+    background-color: #43a047;
+}
+
+/* Modal migliorato */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    margin: 3% auto;
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+/* Bottone di chiusura */
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* Miglioramenti per il form */
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1976d2;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.1);
+}
+
+/* Animazione migliorata */
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive migliorato */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 5% auto;
+        padding: 2rem;
+        width: 95%;
+    }
+
+    .close {
+        right: 1rem;
+        top: 1rem;
+    }
+}
+
+/* Submit button */
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: #1565c0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+
+    .ticket-actions {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .modal-content {
+        margin: 10% auto;
+        padding: 1.5rem;
+    }
+}
+
+/* Top Navigation */
+.top-nav {
+    background: linear-gradient(135deg, #1976d2, #1565c0);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Bottoni della navbar */
+.back-btn, .logout-btn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.back-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.back-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* Responsive per la navbar */
+@media (max-width: 768px) {
+    .top-nav {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-actions {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .back-btn, .logout-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+.aggiornamenti-section,
+.risoluzione-section {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.aggiornamenti-section h4,
+.risoluzione-section h4 {
+    color: #1976d2;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.aggiornamento-item,
+.risoluzione-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+}
+
+.aggiornamento-item:last-child {
+    margin-bottom: 0;
+}
+
+.aggiornamento-item p,
+.risoluzione-item p {
+    margin-bottom: 0.5rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+.aggiornamento-item small,
+.risoluzione-item small {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.tech-name {
+    color: #1976d2;
+    font-weight: 500;
+}
+
+/* Stili per la sezione aggiornamenti */
+.aggiornamenti-section {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.aggiornamenti-section h4 {
+    color: #1976d2;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.aggiornamenti-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.aggiornamento-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.aggiornamento-item p {
+    color: #333;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.aggiornamento-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.tech-name {
+    color: #1976d2;
+    font-weight: 500;
+}
+
+.no-aggiornamenti {
+    text-align: center;
+    padding: 1rem;
+    color: #666;
+    font-style: italic;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px dashed #ccc;
+} 

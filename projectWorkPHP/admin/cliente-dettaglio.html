@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dettaglio Cliente</title>
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/cliente-dettaglio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <nav class="top-nav">
+            <div class="nav-brand">
+                <i class="fas fa-ticket-alt"></i>
+                <span>Dettaglio Cliente</span>
+            </div>
+            <div class="nav-actions">
+                <button onclick="window.location.href='gestione-clienti.html'" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Torna ai Clienti
+                </button>
+                <button onclick="logout()" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <!-- Sezione dettagli cliente -->
+            <section class="dettagli-cliente">
+                <!-- I dettagli del cliente verranno inseriti qui dal JavaScript -->
+            </section>
+
+            <!-- Sezione storico ticket -->
+            <section class="storico-ticket">
+                <h2><i class="fas fa-history"></i> Storico Ticket</h2>
+                <div id="ticketList">
+                    <!-- La lista dei ticket verrà inserita qui dal JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/check_auth.js"></script>
+    <script src="../js/cliente-dettaglio.js"></script>
+</body>
+</html> 

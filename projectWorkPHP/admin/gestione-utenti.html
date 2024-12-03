@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Utenti</title>
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/gestione-utenti.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <nav class="top-nav">
+            <div class="nav-brand">
+                <i class="fas fa-users"></i>
+                <span>Gestione Utenti</span>
+            </div>
+            <div class="nav-actions">
+                <button onclick="window.location.href='dashboard.html'" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Dashboard
+                </button>
+                <button onclick="showNewUserModal()" class="add-btn">
+                    <i class="fas fa-plus"></i> Nuovo Utente
+                </button>
+                <button onclick="logout()" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="users-container">
+                <div id="usersList" class="users-grid">
+                    <!-- Gli utenti verranno caricati qui -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Nuovo Utente -->
+    <div id="newUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Nuovo Utente</h2>
+            <form id="newUserForm">
+                <div class="form-group">
+                    <label for="clienteSelect">Seleziona Cliente</label>
+                    <select id="clienteSelect" required>
+                        <!-- I clienti verranno caricati qui -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-save"></i> Crea Utente
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/check_auth.js"></script>
+    <script src="../js/gestione-utenti.js"></script>
+</body>
+</html> 

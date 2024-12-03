@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Ticket</title>
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/gestione-ticket.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <nav class="top-nav">
+            <div class="nav-brand">
+                <i class="fas fa-ticket-alt"></i>
+                <span>Gestione Ticket</span>
+            </div>
+            <div class="nav-actions">
+                <button onclick="window.location.href='dashboard.html'" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Dashboard
+                </button>
+                <button onclick="logout()" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="tickets-container">
+                <div id="ticketsList" class="tickets-grid">
+                    <!-- I ticket verranno caricati qui -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Modifica Ticket -->
+    <div id="editTicketModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Modifica Ticket</h2>
+            <form id="editTicketForm">
+                <!-- Stato ticket -->
+                <div class="form-group">
+                    <label for="statoTicket">Stato Ticket</label>
+                    <select id="statoTicket" required>
+                        <option value="1">Aperto</option>
+                        <option value="2">In Lavorazione</option>
+                        <option value="3">Chiuso</option>
+                    </select>
+                </div>
+
+                <!-- Note Aggiornamento -->
+                <div class="form-group">
+                    <label for="noteAggiornamento">Note Aggiornamento</label>
+                    <textarea id="noteAggiornamento" placeholder="Inserisci le note dell'aggiornamento..." required></textarea>
+                </div>
+
+                <!-- Note Risoluzione (visibile solo quando si chiude il ticket) -->
+                <div class="form-group resolution-notes" style="display: none;">
+                    <label for="noteRisoluzione">Note di Risoluzione</label>
+                    <textarea id="noteRisoluzione" placeholder="Inserisci le note di risoluzione..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-save"></i> Salva Modifiche
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/check_auth.js"></script>
+    <script src="../js/gestione-ticket-admin.js"></script>
+</body>
+</html> 

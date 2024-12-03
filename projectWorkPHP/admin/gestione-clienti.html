@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Clienti</title>
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/gestione-clienti.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-users"></i> Gestione Clienti</h1>
+                <div class="header-actions">
+                    <button onclick="window.location.href='dashboard.html'" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Dashboard
+                    </button>
+                    <button onclick="showNewClienteModal()" class="add-btn">
+                        <i class="fas fa-plus"></i> Nuovo Cliente
+                    </button>
+                    <button onclick="logout()" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <!-- Lista Clienti -->
+            <div class="clients-container">
+                <div id="clientsList" class="clients-grid">
+                    <!-- I clienti verranno caricati qui -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Nuovo Cliente -->
+    <div id="newClienteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Nuovo Cliente</h2>
+            <form id="newClienteForm">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Telefono</label>
+                    <input type="tel" id="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="partitaIva">Partita IVA</label>
+                    <input type="text" id="partitaIva" maxlength="11">
+                </div>
+                <div class="form-group">
+                    <label for="codiceFiscale">Codice Fiscale</label>
+                    <input type="text" id="codiceFiscale" maxlength="16">
+                </div>
+                <div class="form-group">
+                    <label for="indirizzo">Indirizzo</label>
+                    <input type="text" id="indirizzo" required>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-save"></i> Salva
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/check_auth.js"></script>
+    <script src="../js/gestione-clienti.js"></script>
+</body>
+</html>

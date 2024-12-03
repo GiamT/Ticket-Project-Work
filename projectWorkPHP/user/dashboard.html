@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Cliente</title>
+    <link rel="stylesheet" href="../css/user-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <nav class="top-nav">
+            <div class="nav-brand">
+                <i class="fas fa-ticket-alt"></i>
+                <span>Ticket Management</span>
+            </div>
+            <div class="user-info">
+                <span id="userName"></span>
+                <button onclick="logout()" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </nav>
+        
+        <main class="main-content">
+            <div class="tickets-section">
+                <div class="section-header">
+                    <h2>I Miei Ticket</h2>
+                    <button onclick="showNewTicketModal()" class="new-ticket-btn">
+                        <i class="fas fa-plus"></i> Nuovo Ticket
+                    </button>
+                </div>
+                
+                <div id="ticketsList" class="tickets-list">
+                    <!-- I ticket verranno caricati qui dinamicamente -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Nuovo Ticket -->
+    <div id="newTicketModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="newTicketForm">
+                <h2>Nuovo Ticket</h2>
+                <div class="form-group">
+                    <label for="descrizione">Descrizione del problema</label>
+                    <textarea id="descrizione" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Invia
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Dettagli Ticket -->
+    <div id="ticketDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="ticketDetails" class="ticket-details-container">
+                <!-- I dettagli del ticket verranno caricati qui -->
+            </div>
+            <div id="ticketUpdates" class="ticket-updates-container">
+                <h3>Note del Tecnico</h3>
+                <!-- Gli aggiornamenti verranno caricati qui -->
+            </div>
+            <div id="ticketResolution" class="ticket-resolution-container">
+                <h3>Risoluzione</h3>
+                <!-- La risoluzione verrà caricata qui -->
+            </div>
+        </div>
+    </div>
+    <script src="../js/check_auth.js"></script>
+    <script src="../js/user-dashboard.js"></script>
+</body>
+</html> 
